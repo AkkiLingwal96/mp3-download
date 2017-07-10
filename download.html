@@ -17,7 +17,7 @@
                 font-family: calibri;
             }
             .btn {
-                background-color: orange;
+                background-color: #2E9CD8;
                 border: none;
                 width: 150px;
                 color: white;
@@ -28,7 +28,7 @@
                 font-size: 16px;
                  }
                  .btn span:after {
-                content: '\00bb';
+                content: '\25bc';
                 position: absolute;
                 opacity: 0;
                 top: 0;
@@ -56,13 +56,14 @@
         <h2 class="mod">
             Please type artist or song name to search:
         </h2>
-        <input id="query" type="text" placeholder="Search"/> <input type="image" src='glass.png' width="35" height="35" align='center' id="search-button" onclick="keyWordsearch()">  
+        <input id="query" type="text" placeholder="Search"/> <input type="image" src='glass.png' width="35" height="35" align='center' id="search-button" id="srch" onclick="keyWordsearch();">  
     </center>
 
     <div id="container" align='center'>
         <ul id="results" ></ul>
     </div> 
      <script>
+         
      function keyWordsearch(){
         gapi.client.setApiKey('AIzaSyBINWE_5PBPh-lnUencotMyODHUSPE8iHE');
         gapi.client.load('youtube', 'v3', function() {
@@ -80,14 +81,20 @@
                 $('#results').empty();
                 var srchItems = response.result.items;                      
                 $.each(srchItems, function(index, item) {
-                vidTitle = item.snippet.title;
-                getlink = '<a href="//www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v='+item.id.videoId+'" class="btn"><span>DOWNLOAD</span></a>'; 
+                vidTitle = "<pre><h3 class='mod'> Title: "+item.snippet.title + "</h3></pre>";
+                getlink = '<a href="//www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v='+item.id.videoId+'" class="btn"><span>DOWNLOAD</span></a>';     
                 vidThumburl =  item.snippet.thumbnails.default.url;                 
                 vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No Image Available." style="width:204px;height:128px"></pre>';                   
-
-                $('#results').append('<pre>' + vidTitle + vidThumbimg + getlink + '</pre>');                      
+                if(item.id.videoId) {
+                $('#results').append('<pre>' + vidTitle + vidThumbimg + getlink +'</pre>');  
+            }
         });  
     });  
+}
+     document.getElementById('srch').onkeydown = function(event) {
+    if (event.keyCode == 13) {
+        keyWordsearch();
+    }
 }
   </script> 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

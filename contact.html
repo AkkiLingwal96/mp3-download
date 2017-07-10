@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <style>
+            input, textarea {
+                width: 100%; 
+                padding: 12px;  
+                border: 1px solid #ccc;
+                border-radius: 4px; 
+                box-sizing: border-box;
+                margin-top: 6px; 
+                margin-bottom: 16px; 
+                resize: vertical 
+            }
+
+            
+            input[type=submit] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+            
+            .container {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+            }
+        </style>    
+    </head>
+    <body>
+        <div class="container">
+        <form action="email.php">
+
+          <label for="name">Name* </label>
+          <input type="text" id="name" name="name" placeholder="Your name.." required="required">
+
+          <label for="email">Email* </label>
+          <input type="email" id="emailid" name="email" placeholder="Email Id" required="required">          
+          
+          <label for="subject">Subject* </label>
+          <input type="text" id="subject" name="subject" placeholder="Subject.." required="required">          
+
+          <label for="msg">Message* </label>
+          <textarea id="subject" name="msg" placeholder="Your message.." style="height:200px" required="required"></textarea>
+
+          <input type="submit" value="Submit">
+
+        </form>
+      </div>
+    </body>
+</html>

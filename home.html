@@ -55,14 +55,14 @@
               height: 10px;
               width: 10px;
               margin: 1px;
-              background-color: green;
+              background-color: grey;
               border-radius: 50%;
               display: inline-block;
               transition: 0.6s ease;
             }
 
             .active {
-              background-color: gold;
+              background-color: black;
             }
 
             /* Fading animation */
@@ -83,36 +83,46 @@
             .hdng{
                 font-family: calibri light;
                 color: black;
+                padding: 5px 5px;
             }
             
         </style>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
     </head>
-    <body background="smoke.jpg">
+    <body background="fog.jpg" style="background-size: cover;">
         <div align="center">
         <form>
             <table>
                 <tr>
                     <td>
-                        <h1 class="hdng">SONG OF THE DAY<img src="down.png" height="40" width="40" align="center"></h1>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td> <object width="620" height="390" data="https://www.youtube.com/v/KDxJlW6cxRk&autoplay=0">
-                    </object>
+                        <h1 class="hdng" align='center'>SONG OF THE DAY<img src="down.png" height="40" width="40" align="center"></h1>
                     </td>
                     <td>
-                        <div class="slideshow-container">
+                        <h1 class="hdng" align='center'>LATEST RELEASES<img src="down.png" height="40" width="40" align="center"></h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td><object style='padding: 10px 10px;' width="600" height="435" data="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/332009259&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true">
+                    </object>
+                    </td>                    
+                    <td><object>
+                        <div class="slideshow-container" align="center"  style="padding: 10px 10px;">
                         <div class="mySlides fade">
-                           <img src="slide1.jpg" style="width:100%; height: 240px;">
+                           <img src="americanteen.jpg" style="width:400px; height: 400px;">
                         </div>
 
                         <div class="mySlides fade">
-                           <img src="slide2.jpg" style="width:100%; height: 240px;">
+                           <img src="kaleidoscope.jpg" style="width:400px; height: 400px;">
                         </div>
 
                         <div class="mySlides fade">
-                          <img src="slide3.jpg" style="width:100%; height: 240px;">
+                          <img src="incubus8.png" style="width:400px; height: 400px;">
+                        </div>
+                            
+                        <div class="mySlides fade">
+                          <img src="vessels.jpg" style="width:400px; height: 400px;">
                         </div>
 
                         </div>
@@ -121,8 +131,10 @@
                         <div style="text-align:center">
                           <span class="dot"></span> 
                           <span class="dot"></span> 
-                          <span class="dot"></span> 
+                          <span class="dot"></span>
+                          <span class="dot"></span>
                         </div>
+                        </object>
                     </td>
                 </tr>
             </table>

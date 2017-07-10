@@ -2,18 +2,46 @@
 <html>
     <head>
         <title>LOGIN PAGE</title>
+        <style>
+            input {
+                width: 100%; 
+                padding: 7px;  
+                border: 1px solid #ccc;
+                border-radius: 4px; 
+                box-sizing: border-box;
+                margin-top: 6px; 
+                margin-bottom: 16px; 
+                resize: vertical 
+            }
+            .btn {
+                background-color: green;
+                border: none;
+                width: 150px;
+                color: white;
+                padding: 10px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            h2{
+                color: white;
+                font-family: calibri;
+            }
+         </style>
     </head>
     <body>
         <form action="logincheck" method="GET">
             <table align="center">
                 <tr>
-                    <td>Username: <td> <input type="text" name="uname"><br>
+                    <td><h2>Username: </h2><td> <input type="text" name="uname"><br>
                 </tr>
                 <tr>
-                    <td>Password: <td> <input type="password" name="pass"><br>
+                    <td><h2>Password: </h2><td> <input type="password" name="pass"><br>
                 </tr>
                 <tr>
-                    <td> <input type="submit" value="LOGIN">
+                    <td colspan='2'><center> <button type="submit" class='btn'>LOG IN</button> </center>
                 </tr>
             </table>
         </form>
