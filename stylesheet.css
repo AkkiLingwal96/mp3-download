@@ -1,0 +1,43 @@
+        ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                width: 80%;
+               
+            }
+            li {
+                float: left;
+            }
+            li a{
+                display: block;
+                color: white;
+               
+                text-align: center;
+                padding: 14px 40px;
+                text-decoration: none;
+            }
+             li a.active{
+                background-color: darkcyan;
+                color: white;
+            }
+            li a:hover:not(.active) {
+                background-color: black;
+                color: white;
+            } 
+            .td1
+            {
+                background-color: #141313;
+            }
+            h1 {
+                color: white;
+            }
+            iframe{
+                border: none;
+            }
+            background{
+                opacity: 0.5;
+            }
+            .heading {
+                background-image: linear-gradient(to right, black 20%, #B21C1C 90%);
+            }
+                     

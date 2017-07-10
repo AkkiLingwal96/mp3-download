@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inserting New User Data</title>
+    </head>
+    <body>
+        <form action="entry.jsp" method="GET">
+            <table align="center">
+                <tr>
+                    <td> Name: <td> <input type="text" name="uname"><br> 
+                     </tr>
+                <tr>
+                    <td> User ID:<td> <input type="text" name="id"><br> </td> 
+                     </tr>
+                <tr>
+                    <td> Password:<td> <input type="password" name="pass"><br> 
+                    </tr>
+                <tr>
+                    <td> Country:<td> <select name="country">
+                            <option value=""></option>
+                            <option value="India">India</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Myanmar">Myanmar</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                        </select><br> 
+                    </tr>    
+                <tr>
+                    <td> Gender: <td>Male <input type="radio" name="gen" value="male"> 
+                        Female <input type="radio" name="gen" value="female"><br>
+                     </tr>
+                     <tr>
+                    <td> College:<td> <input type="text" name="clg"><br> 
+                    </tr>
+                <tr>
+                    <td> Address:<td> <input type="text" name="addrs"><br> 
+                    </tr>
+                <tr> 
+                   <td> Degree: <td>Maths<input type="checkbox" name="deg" value="Maths"> B.tech<input type="checkbox" name="deg" value="B.tech">
+                       BBA<input type="checkbox" name="deg" value="BBA"> MBA<input type="checkbox" name="deg" value="MBA"> 
+                       BCOM<input type="checkbox" name="deg" value="BCOM"> BSc<input type="checkbox" name="deg" value="BSc">
+                       <td>MA<input type="checkbox" name="deg" value="MA"><br>
+                     </tr>
+                <tr>
+                    <td> Date of Birth:<td> <input type="date" name="dob"><br> 
+                    </tr>
+                <tr>
+                    <td> Contact:<td> <input type="text" name="phn"><br> 
+                    </tr>
+                    <td>&emsp; <input type="submit" value="Register"> 
+                    <td> <input type="reset" value="Clear">
+                     </tr> 
+            </table>
+        </form>
+    </body>
+</html>

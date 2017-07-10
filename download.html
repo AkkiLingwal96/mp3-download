@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Download</title>
+        <style>
+            input[type=text]{
+                width: 40%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            .mod{
+                color:white;
+                font-family: calibri;
+            }
+            .btn {
+                background-color: orange;
+                border: none;
+                width: 150px;
+                color: white;
+                padding: 10px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                 }
+                 .btn span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -15px;
+                transition: 0.5s;
+            }
+            .btn:hover span {
+                padding-right: 15px;
+            }
+            .btn:hover span:after{
+                opacity: 1;
+                right: 0;
+            }
+            .btn span{
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            </style>
+    </head>
+    <body bgcolor="#6BDB8B">
+        
+    <center>
+        <h2 class="mod">
+            Please type artist or song name to search:
+        </h2>
+        <input id="query" type="text" placeholder="Search"/> <input type="image" src='glass.png' width="35" height="35" align='center' id="search-button" onclick="keyWordsearch()">  
+    </center>
+
+    <div id="container" align='center'>
+        <ul id="results" ></ul>
+    </div> 
+     <script>
+     function keyWordsearch(){
+        gapi.client.setApiKey('AIzaSyBINWE_5PBPh-lnUencotMyODHUSPE8iHE');
+        gapi.client.load('youtube', 'v3', function() {
+                makeRequest();
+        });
+}
+    function makeRequest() {
+        var q = $('#query').val();
+        var request = gapi.client.youtube.search.list({
+                q: q,
+                part: 'snippet', 
+                maxResults: 10
+        });
+        request.execute(function(response)  {                                                                                    
+                $('#results').empty();
+                var srchItems = response.result.items;                      
+                $.each(srchItems, function(index, item) {
+                vidTitle = item.snippet.title;
+                getlink = '<a href="//www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v='+item.id.videoId+'" class="btn"><span>DOWNLOAD</span></a>'; 
+                vidThumburl =  item.snippet.thumbnails.default.url;                 
+                vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No Image Available." style="width:204px;height:128px"></pre>';                   
+
+                $('#results').append('<pre>' + vidTitle + vidThumbimg + getlink + '</pre>');                      
+        });  
+    });  
+}
+  </script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">  </script>
+</body>
+</html>
