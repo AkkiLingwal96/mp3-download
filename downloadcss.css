@@ -1,0 +1,64 @@
+                /* Add animation to "page content" */
+                .animate-bottom {
+                  position: relative;
+                  -webkit-animation-name: animatebottom;
+                  -webkit-animation-duration: 1s;
+                  animation-name: animatebottom;
+                  animation-duration: 1s
+                }
+
+                @-webkit-keyframes animatebottom {
+                  from { bottom:-100px; opacity:0 } 
+                  to { bottom:0px; opacity:1 }
+                }
+
+                @keyframes animatebottom { 
+                  from{ bottom:-100px; opacity:0 } 
+                  to{ bottom:0; opacity:1 }
+                }
+
+                input[type=text]{
+                width: 40%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            .mod{
+                color:white;
+                font-family: calibri;
+            }
+            .btn {
+                background-color: #2E9CD8;
+                border: none;
+                width: 150px;
+                color: white;
+                padding: 10px 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                 }
+                 .btn span:after {
+                content: '\25bc';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -15px;
+                transition: 0.5s;
+            }
+            .btn:hover span {
+                padding-right: 15px;
+            }
+            .btn:hover span:after{
+                opacity: 1;
+                right: 0;
+            }
+            .btn span{
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
