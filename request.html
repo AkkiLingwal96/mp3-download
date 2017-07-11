@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <style>
+            input, textarea {
+                width: 100%; 
+                padding: 12px;  
+                border: 1px solid #ccc;
+                border-radius: 4px; 
+                box-sizing: border-box;
+                margin-top: 6px; 
+                margin-bottom: 16px; 
+                resize: vertical; 
+            }
+            .btn {
+                background-color: #97339B;
+                color: white;
+                width: 30%;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .btn:hover {
+                background-color: #8D2F91;
+            }
+            
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+            
+            .container {
+                border-radius: 5px;
+                background-color: #162D3A;
+                padding: 20px;
+
+            }
+            html { 
+                font-size:80%; 
+            }
+            label{
+                color: white;
+            }
+            h2, p {
+                color: white;
+            }
+           
+            @media (min-width: 640px) { body {font-size:1rem;} } 
+            @media (min-width:960px) { body {font-size:1.2rem;} } 
+            @media (min-width:1100px) { body {font-size:1.5rem;} }
+        </style> 
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>
+                Request your wanted album or discography :
+            </h2>   
+            
+         <form action="request.php" method="POST">
+            <label for="name">Name* </label>
+            <input type="text" name="name" placeholder="Your name.." required="required">
+
+            <label for="email">Email* </label>
+            <input type="email" name="email" placeholder="Email Id.." required="required">     
+
+            <label for="subject">Artist and Album* </label>
+            <input type="text" name="subject" placeholder="Artist name - Album name" required="required">          
+
+            <label for="ref">Reference(if any): </label>
+            <textarea name="ref" placeholder="link from wiki/soundcloud/youtube/loudwire.. etc" style="height:100px" required="required"></textarea>
+            
+            <div class="g-recaptcha" data-sitekey="6LcYvCgUAAAAAMXSecvFDRpEAUJbesm1nCH9gtLx"></div>
+
+            <button type="submit" class="btn">Request</button> <button type="reset" class="btn">Clear</button>            
+
+            </form>
+            <p>
+                *It is advised to give a reference link so that it makes us easy to find the artist :)
+            </p>
+        </div>    
+    </body>
+</html>

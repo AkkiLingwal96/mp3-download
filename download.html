@@ -3,6 +3,9 @@
     <head>
         <title>Download</title>
         <link rel="stylesheet" type="text/css" href="downloadcss.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
     </head>
     <body bgcolor="#6BDB8B">
         
@@ -10,14 +13,27 @@
         <h2 class="mod">
             Please type artist or song name to search:
         </h2>
-        <input id="query" type="text" placeholder="Search"/> <input type="image" src='glass.png' width="35" height="35" align='center' id="search-button" onKeyDown="if(event.keyCode==13) keyWordsearch();" onclick="keyWordsearch()">  
-    </center>
+    </center>    
+        
+        <form onsubmit="return myfunc();">
+            <center>
+            <input id="query" type="text" placeholder="Search"/> <input type="image" src='glass.png' width="35" height="35" align='center' id="srch-btn" onclick="keyWordsearch()">  
+            </center>            
+            </form>
+        
+    
 
-    <div id="container" align='center'>        
-        <ul id="results"></ul>
+    <div id="container" align='center' >        
+        <ul id="results" ></ul>
         </div> 
      <script>
-         
+     function myfunc(){
+         if(event.keyCode === 13){
+             return true;
+         }
+         return false;
+     } 
+    
      function keyWordsearch(){
         gapi.client.setApiKey('AIzaSyBINWE_5PBPh-lnUencotMyODHUSPE8iHE');
         gapi.client.load('youtube', 'v3', function() {

@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <style>
@@ -19,9 +14,10 @@ and open the template in the editor.
             }
 
             
-            input[type=submit] {
+            .btn {
                 background-color: #4CAF50;
                 color: white;
+                width: 30%;
                 padding: 12px 20px;
                 border: none;
                 border-radius: 4px;
@@ -29,7 +25,7 @@ and open the template in the editor.
             }
 
             
-            input[type=submit]:hover {
+            .btn:hover {
                 background-color: #45a049;
             }
 
@@ -39,25 +35,38 @@ and open the template in the editor.
                 background-color: #f2f2f2;
                 padding: 20px;
             }
-        </style>    
+            html { 
+                font-size:80%; 
+            }
+            @media (min-width: 640px) { body {font-size:1rem;} } 
+            @media (min-width:960px) { body {font-size:1.2rem;} } 
+            @media (min-width:1100px) { body {font-size:1.5rem;} }
+        </style> 
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
     <body>
         <div class="container">
-        <form action="email.php">
+          <form action="email.php" method="POST">
 
           <label for="name">Name* </label>
-          <input type="text" id="name" name="name" placeholder="Your name.." required="required">
+          <input type="text" name="name" placeholder="Your name.." required="required">
 
           <label for="email">Email* </label>
-          <input type="email" id="emailid" name="email" placeholder="Email Id" required="required">          
+          <input type="email" name="email" placeholder="Email Id" required="required">     
           
           <label for="subject">Subject* </label>
-          <input type="text" id="subject" name="subject" placeholder="Subject.." required="required">          
+          <input type="text" name="subject" placeholder="Subject.." required="required">          
 
           <label for="msg">Message* </label>
-          <textarea id="subject" name="msg" placeholder="Your message.." style="height:200px" required="required"></textarea>
+          <textarea name="msg" placeholder="Your message.." style="height:200px" required="required"></textarea>
+          
+          <div class="g-recaptcha" data-sitekey="6LcYvCgUAAAAAMXSecvFDRpEAUJbesm1nCH9gtLx"></div>
 
-          <input type="submit" value="Submit">
+          <button type="submit" class="btn">Submit</button>
+          <button type="reset" class="btn">Clear</button>
 
         </form>
       </div>
