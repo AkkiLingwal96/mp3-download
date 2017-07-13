@@ -7,12 +7,114 @@ and open the template in the editor.
 <html>
     <head>
         <style>
+            * {
+              box-sizing: border-box;
+            }
+
+            #myInput {
+              width: 100%;
+              font-size: 16px;
+              padding: 12px 20px 12px 40px;
+              border: 1px solid #ddd;
+              margin-bottom: 12px;
+            }
+
+            #myUL {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+            }
+
+            #myUL li a {
+              border: 1px solid #ddd;
+              margin-top: -1px; /* Prevent double borders */
+              background-color: #f6f6f6;
+              padding: 12px;
+              text-decoration: none;
+              font-size: 18px;
+              color: black;
+              display: block
+            }
+
+            #myUL li a.header {
+              background-color: #e2e2e2;
+              cursor: default;
+            }
+
+            #myUL li a:hover:not(.header) {
+              background-color: #eee;
+            }
             
+            h2, p{
+                font-family: calibri;
+                color: white;
+            }
         </style>
     </head>
     <body>
-        <div>
-            <img src="batchesbg.png" height="100%" width="100%" alt="Coming Soon" style="background-size: cover;">
-        </div>
+        <h2>Albums & Collections -</h2><p> *Please use Chrome or Firefox for best experience</p>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+        <ul id="myUL">
+          <li><a href="#" class="header">B</a></li>
+          <li><a href="batches/bassjackers_disco.torrent" download>BassJackers [Discography-320kbps]</a></li>
+          <li><a href="batches/bmth_disco.torrent" download>Bring Me The Horizon [Discography-320kbps]</a></li>
+
+          <li><a href="#" class="header">D</a></li>
+          <li><a href="batches/djsnake_encore.torrent" download>DJ Snake - Encore[Album-320kbps]</a></li>
+          <li><a href="batches/drake_morelife.torrent" download>Drake - More Life [Album-320kbps]</a></li>
+          <li><a href="batches/dvlm_disco.torrent" download>Dimitri Vegas and Like Mike [Discography-320kbps]</a></li>
+          
+          <li><a href="#" class="header">H</a></li>
+          <li><a href="batches/hotalternate_pop_mix.torrent">Hot Alternate Rap|PoP|Hip-Hop [Collection-2017-320kbps]</a></li>
+          
+          <li><a href="#" class="header">I</a></li>
+          <li><a href="batches/illenium_ashesremixes.torrent" download>Illenium - Ashes(Remixes) [Album-320kbps]</a></li>
+          <li><a href="incubus_8.torrent">Incubus - 8[320kbps]</a></li>
+          
+          <li><a href="#" class="header">K</a></li>
+          <li><a href="batches/khalid_americanteen.torrent" download>Khalid - American Teen [Album-320kbps]</a></li>
+          
+          <li><a href="#" class="header">L</a></li>
+          <li><a href="batches/lp_onemorelight.torrent" download>Linkin Park - One More Light [Album-320kbps]</a></li>
+          
+          <li><a href="#" class="header">M</a></li>
+          <li><a href="batches/martingarrix_disco.torrent" download>Martin Garrix [Discography-320kbps]</a></li>
+          <li><a href="batches/muse_disco.torrent" download>Muse [Discography-320kbps]</a></li>
+          <li><a href="batches/muse_originofsymmetry.torrent" download>Muse - Origin of Symmetry [Album-320kbps]</a></li>
+          
+          <li><a href="#" class="header">N</a></li>
+          <li><a href="batches/nirvana_bestof.torrent" download>Nirvana - Best of [Album-320kbps]</a></li>
+          
+          <li><a href="#" class="header">P</a></li>
+          <li><a href="batchesporcupinetree_disco.torrent" download>Porcupine Tree [Discography-320kbps]</a></li>
+          
+          <li><a href="#" class="header">T</a></li>
+          <li><a href="batches/thepineapplethief_disco.torrent" download>The Pineapple Thief [Discography-320kbps]</a></li>
+          <li><a href="batches/thepineapplethief_yourwilderness.torrent" download>The Pineapple Thief - Your Wilderness [Album-320kbps]</a></li>
+          <li><a href="batches/trapmix_ep2.torrent" download>Trap Mix Ep2 [Collection-320kbps]</a></li>
+        
+        </ul>
+
+        <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+
+                }
+            }
+        }
+        </script>
+
     </body>
 </html>

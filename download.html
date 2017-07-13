@@ -24,7 +24,7 @@
     
 
     <div id="container" align='center' >        
-        <ul id="results" ></ul>
+        <ul id="results"></ul>
         </div> 
      <script>
      function myfunc(){
@@ -51,12 +51,12 @@
                 $('#results').empty();
                 var srchItems = response.result.items;                      
                 $.each(srchItems, function(index, item) {
-                vidTitle = "<pre><h3 class='mod'> Title: "+item.snippet.title + "</h3></pre>";
-                getlink = '<a href="//www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v='+item.id.videoId+'" class="btn"><span>DOWNLOAD</span></a>';     
+                vidTitle = "<pre><h3 class='mod'>"+item.snippet.title + "</h3></pre>";
+                getlink = '<a href="//www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v='+item.id.videoId+'" class="btn"><span>Download</span></a>';     
                 vidThumburl =  item.snippet.thumbnails.default.url;                 
                 vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No Image Available." style="width:204px;height:128px"></pre>';                   
                 if(item.id.videoId) {
-                $('#results').append('<pre class="animate-bottom">' + vidTitle + vidThumbimg + getlink +'</pre>');  
+                $('#results').append('<pre class="animate-bottom"><center>' + vidTitle + vidThumbimg + getlink +'</center></pre>');  
             }
         });  
     });  
