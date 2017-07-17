@@ -7,6 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <style>
+            
             * {
               box-sizing: border-box;
             }
@@ -22,7 +23,7 @@ and open the template in the editor.
             #myUL {
               list-style-type: none;
               padding: 0;
-              margin: 0;
+              margin: 0;              
             }
 
             #myUL li a {
@@ -33,7 +34,8 @@ and open the template in the editor.
               text-decoration: none;
               font-size: 18px;
               color: black;
-              display: block
+              display: block;
+              font-size: medium;
             }
 
             #myUL li a.header {
@@ -48,23 +50,70 @@ and open the template in the editor.
             h2, p{
                 font-family: calibri;
                 color: white;
-            }
+            }            
         </style>
-    </head>
-    <body>
-        <h2>Albums & Collections -</h2><p> *Please use Chrome or Firefox for best experience</p>
+    
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="icon/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="icon/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="icon/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="icon/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="icon/favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="icon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="icon/favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'>
+        <link rel='stylesheet' type='text/css' href='mastercss.css'>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+    
+    </head>
+    <body bgcolor="black">
+        <center><div style="width: 90%;" align="center">
+            <center><img src="banner2.png" alt="downloadmp3andalbums" style="background-size: cover; width: 90%; height: 90%;"></center>            
+                <div style="width: 90%;" class="topnav" id="myTopnav">
+                        <a href="master.html">Home</a>
+                        <a href="news.html">News</a>
+                        <a href="download.html">Download</a>
+                        <a href="batches.html">Batches</a>
+                        <a href="request.html">Request</a>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>                        
+                        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>                    
+                    </div>
+                 </div>   
+            <div style="width: 80%; text-align: left; font-size: large;"> 
+        <h2 align="left">Albums & Collections -</h2><p align="left"> *Please use Chrome or Edge for best experience. All files are .torrent</p>
+
+        <input type="text" id="myInput" onkeyup="filter()" placeholder="Search for names.." title="Type in a name">
 
         <ul id="myUL">
           <li><a href="#" class="header">B</a></li>
           <li><a href="batches/bassjackers_disco.torrent" download>BassJackers [Discography-320kbps]</a></li>
           <li><a href="batches/bmth_disco.torrent" download>Bring Me The Horizon [Discography-320kbps]</a></li>
+		  
+		  <li><a href="#" class="header">C</a></li>
+		  <li><a href="batches/coldplay_kaleidoscope.torrent" download>Coldplay - Kaleidoscope EP[Album-320kbps]</a></li>
 
           <li><a href="#" class="header">D</a></li>
+		  <li><a href="batches/djkhaled_grateful.torrent" download>DJ Khaled - Grateful [Album-320kbps]</a></li>
           <li><a href="batches/djsnake_encore.torrent" download>DJ Snake - Encore[Album-320kbps]</a></li>
           <li><a href="batches/drake_morelife.torrent" download>Drake - More Life [Album-320kbps]</a></li>
-          <li><a href="batches/dvlm_disco.torrent" download>Dimitri Vegas and Like Mike [Discography-320kbps]</a></li>
+          <li><a href="batches/dvlm_disco.torrent" download>Dimitri Vegas and Like Mike [Discography-320kbps]</a></li>		  
           
           <li><a href="#" class="header">H</a></li>
           <li><a href="batches/hotalternate_pop_mix.torrent">Hot Alternate Rap|PoP|Hip-Hop [Collection-2017-320kbps]</a></li>
@@ -94,11 +143,25 @@ and open the template in the editor.
           <li><a href="batches/thepineapplethief_disco.torrent" download>The Pineapple Thief [Discography-320kbps]</a></li>
           <li><a href="batches/thepineapplethief_yourwilderness.torrent" download>The Pineapple Thief - Your Wilderness [Album-320kbps]</a></li>
           <li><a href="batches/trapmix_ep2.torrent" download>Trap Mix Ep2 [Collection-320kbps]</a></li>
+		  <li><a href="batches/the1975_whenyousleep.torrent" download>The 1975 - I like it when you sleep... [Album-320kbps]</a></li>
         
+		  <li><a href="#" class="header">V</a></li>
+		  <li><a href="batches/va_bestofrock2017.torrent" download>VA - Best of Rock 2017 [Collection-320kbps]</a></li>
         </ul>
-
+            </div>
+        </center>
+    <script>
+            function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
         <script>
-        function myFunction() {
+        function filter() {
             var input, filter, ul, li, a, i;
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();

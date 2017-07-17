@@ -2,31 +2,85 @@
 <html>
     <head>
         <title>Download</title>
+        
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="icon/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="icon/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="icon/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="icon/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="icon/favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="icon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="icon/favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
         <link rel="stylesheet" type="text/css" href="downloadcss.css">
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'>
+        <link rel='stylesheet' type='text/css' href='mastercss.css'>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
     </head>
-    <body bgcolor="#6BDB8B">
-        
-    <center>
-        <h2 class="mod">
+    <body bgcolor="black"> 
+        <center><div style="width: 90%;" align="center">
+            <center><img src="banner2.png" alt="downloadmp3andalbums" style="background-size: cover; width: 90%; height: 90%;"></center>            
+                <div style="width: 90%;" class="topnav" id="myTopnav">
+                        <a href="master.html">Home</a>
+                        <a href="news.html">News</a>
+                        <a href="download.html">Download</a>
+                        <a href="batches.html">Batches</a>
+                        <a href="request.html">Request</a>
+                        <a href="about.html">About</a>
+                        <a href="contact.html">Contact</a>                         
+                        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>                    
+                    </div>
+            </div>        
+            <div style="color: white; width: 80%;" align="center">
+                <h2 class="mod" style="font-size: x-large;">
             Please type artist or song name to search:
         </h2>
-    </center>    
-        
+		<p class="mod" align="center"> *Please use Chrome or Edge for best experience.</p>
         <form onsubmit="return myfunc();">
             <center>
-            <input id="query" type="text" placeholder="Search"/> <input type="image" src='glass.png' width="35" height="35" align='center' id="srch-btn" onclick="keyWordsearch()">  
+                <input id="query" type="text" placeholder="Search"/><br>  
+                <input type="submit" value="Go!" class="btn3" align='center' id="srch-btn" onclick="keyWordsearch()">
             </center>            
             </form>
-        
-    
 
-    <div id="container" align='center' >        
-        <ul id="results"></ul>
-        </div> 
-     <script>
+            <div id="container" align='center' >        
+            <div id="results"></div>
+            </div>
+            </div>
+            <br>
+            <div align="center" style="color: white; width: 90%; font-size: small;">
+                <footer>&copy; 2017 BlackCatTunes. All rights reserved.</footer>
+            </div>
+    </center>    
+    <script>
+            function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>    
+    <script>
      function myfunc(){
          if(event.keyCode === 13){
              return true;
@@ -39,7 +93,7 @@
         gapi.client.load('youtube', 'v3', function() {
                 makeRequest();
         });
-}
+}   
     function makeRequest() {
         var q = $('#query').val();
         var request = gapi.client.youtube.search.list({
@@ -47,18 +101,25 @@
                 part: 'snippet', 
                 maxResults: 10
         });
+        var count = 0;
         request.execute(function(response)  {                                                                                    
                 $('#results').empty();
                 var srchItems = response.result.items;                      
                 $.each(srchItems, function(index, item) {
                 vidTitle = "<pre><h3 class='mod'>"+item.snippet.title + "</h3></pre>";
-                getlink = '<a href="//www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v='+item.id.videoId+'" class="btn"><span>Download</span></a>';     
+                getlink = '<a href="//www.youtubeinmp3.com/fetch/?video=https://www.youtube.com/watch?v='+item.id.videoId+'" class="btn3" target="_blank"><span>Download</span></a>';     
                 vidThumburl =  item.snippet.thumbnails.default.url;                 
-                vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No Image Available." style="width:204px;height:128px"></pre>';                   
+                vidThumbimg = '<pre><img id="thumb" src="'+vidThumburl+'" alt="No Image Available." style="width:15%;height:10%"></pre>';                   
+                      
                 if(item.id.videoId) {
-                $('#results').append('<pre class="animate-bottom"><center>' + vidTitle + vidThumbimg + getlink +'</center></pre>');  
-            }
+                    $('#results').append('<pre class="animate-bottom" style="font-size: medium;"><center>' + vidTitle + vidThumbimg + getlink +'</center></pre>');                     
+                    count++;
+                }
+                
         });  
+        if(count === 0){
+            $('#results').append('<pre style="font-size: medium; font-family: calibri;"><center> Sorry. No results found. Please check the spelling or try another song/artist.</center></pre>');
+        }
     });  
 }
   </script> 
